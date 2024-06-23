@@ -1,22 +1,22 @@
 import React from 'react'
 import { MainFooterLinks } from '@/constants'
 import Link from 'next/link'
-import MainLogo from './MainLogo'
+import MainLogo from './LogoSVGs/MainLogo'
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center justify-center min-h-[10vh]
-    bg-[#cf92a1] font-nunito lowercase text-sm">
-        <ul className="mx-auto flex flex-row gap-8">
+    <footer className="flex flex-row justify-between items-center px-4 min-h-[10vh]
+    bg-[#e18cb634] font-nunito lowercase text-sm text-white">
+        <ul className="flex flex-row gap-4">
             {MainFooterLinks.map((link)=> (
-                <li>
+                <li key={"footer link "+link.text}>
                     <Link href={link.href}>{link.text}</Link>
                 </li>
             ))}
         </ul>
 
-        <span className="flex flex-row gap-2 mt-2">
-            <MainLogo />
+        <span className="flex flex-row gap-2">
+            <MainLogo color="#ffff" size="20px" />
             <p>Amira Designs</p>
         </span>
 

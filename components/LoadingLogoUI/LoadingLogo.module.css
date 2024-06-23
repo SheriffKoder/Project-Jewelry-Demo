@@ -1,0 +1,82 @@
+.window { /*camera*/
+    perspective: 2000px;
+    perspective-origin: 300px 100px;
+
+    position: relative;
+
+
+}
+
+.scene {   /* items space */
+
+    height: 200px;
+    width: 100%;
+
+
+    border: 1px solid black;
+    /* border-radius: 30px; */
+
+
+
+    /******************************/
+    position: absolute;
+    transform-style: preserve-3d;
+    /******************************/
+
+    /* top: 00px; change to test on other elements */
+}
+
+.card {
+
+    height: 100px;
+    width: 100px;
+    /******************************/
+    position: absolute;
+    transform: translate(-50%, -50%) rotateY(0deg);
+    transition: all 0.5s linear;
+
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-name: rotateCard;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+
+    /* backface-visibility: hidden; */
+    
+    /******************************/
+
+
+    top: 50%;
+    left: 50%;
+}
+
+.card_front {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to top, rgb(173, 0, 255), rgb(102, 0, 226));
+    border: 1px solid black;
+}
+
+.card_back {
+    height: 100%;
+    width: 100%;
+
+    background: linear-gradient(to bottom, rgb(173, 0, 255), rgb(102, 0, 226));
+    border: 1px solid black;
+
+    position: absolute;
+    top: 0;
+    transform: translateZ(50px) rotateY(180deg);
+   
+}
+
+/******************************/
+@keyframes rotateCard {
+    to {transform: translate(-50%, -50%) rotateY(360deg);}
+
+}
+
+/******************************/
+.scene2:hover .card2 {
+    animation: rotateCard 1s forwards linear;
+}

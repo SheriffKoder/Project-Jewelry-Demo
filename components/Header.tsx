@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 import { MainNavLinks } from '@/constants'
-import MainLogo from './MainLogo'
+import MainLogo from './LogoSVGs/MainLogo'
 
 const Header = () => {
   return (
@@ -17,9 +17,9 @@ const Header = () => {
                 <p className="font-write tracking-wider text-xs mt-[-0.125rem]">Amira jewelery</p>
             </div>
 
-            <ul className="flex flex-row gap-2 uppercase text-xs">
+            <ul className="flex flex-row gap-4 uppercase text-xs">
                 { MainNavLinks.map((link) => (
-                    <li key={"main navigation "+link.text}>
+                    <li key={"main navigation link "+link.text}>
                         <Link href={link.href}
                         className={`${link.type === "button" ? 'px-3 py-1 bg-[#e18cb6] rounded-full text-white' : null}`}>{link.text}</Link>
                     </li>

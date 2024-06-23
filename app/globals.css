@@ -60,3 +60,77 @@ background:#ccbcad;
 background:#d4bcb4;
 background:#d4ccbc;
 } */
+@keyframes turn {
+  from { transform: rotate3d(0, 0, 0, 0); }
+  to { transform: rotate3d(0, 1, 0, 360deg); }
+}
+
+.container {
+  width: 50px;
+  height: 50px;
+  perspective: 125px;
+
+  /* center */
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+
+}
+
+.cube {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  transform-style: preserve-3d;
+  animation: turn 5s linear infinite;
+
+}
+
+.face {
+  width: 50px;
+  height: 50px;
+  /* background: skyblue; */
+  /* border: 2px solid black; */
+  position: absolute;
+  /* opacity: 0.5; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  transition: transform 500ms;
+  backface-visibility: hidden;
+
+}
+
+.front {
+  transform: translateZ(0px);
+}
+
+.back {
+  transform: translateZ(0px) rotateY(180deg);
+}
+
+.left {
+  transform: translateX(-50px) rotateY(-90deg);
+  display: none;
+}
+
+.right {
+  transform: translateX(50px) rotateY(90deg);
+  display: none;
+
+}
+
+.top {
+  transform: translateY(-50px) rotateX(90deg);
+  display: none;
+
+}
+
+.bottom {
+  transform: translateY(50px) rotateX(-90deg);
+  display: none;
+
+}
